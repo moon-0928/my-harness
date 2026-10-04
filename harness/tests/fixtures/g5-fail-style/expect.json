@@ -1,0 +1,25 @@
+{
+  "script": "check-figma.js",
+  "args": [
+    "--gate",
+    "g5",
+    "--dump",
+    "{dir}/figma-dump.json"
+  ],
+  "pass": false,
+  "rules": [
+    "accent.onButton",
+    "accent.max",
+    "shadow",
+    "gradient",
+    "type.letterSpacing",
+    "type.textCase",
+    "type.size",
+    "radius",
+    "spacing",
+    "input.stroke",
+    "button.height",
+    "frame.size",
+    "color"
+  ]
+}

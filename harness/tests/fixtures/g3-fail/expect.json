@@ -1,0 +1,13 @@
+{
+  "script": "check-g3.js",
+  "args": [
+    "--dump",
+    "{dir}/figma-dump.json"
+  ],
+  "pass": false,
+  "rules": [
+    "g3.frameCount",
+    "frame.size",
+    "g3.decision"
+  ]
+}

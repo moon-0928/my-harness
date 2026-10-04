@@ -1,0 +1,21 @@
+{
+  "frames": [
+    {
+      "screen": "내 자산",
+      "name": "내 자산",
+      "type": "FRAME",
+      "width": 375,
+      "height": 812,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#ffffff"
+        }
+      ],
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 24,
+      "children": []
+    }
+  ]
+}

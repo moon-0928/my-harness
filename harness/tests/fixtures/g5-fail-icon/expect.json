@@ -1,0 +1,14 @@
+{
+  "script": "check-figma.js",
+  "args": [
+    "--gate",
+    "g5",
+    "--dump",
+    "{dir}/figma-dump.json"
+  ],
+  "pass": false,
+  "rules": [
+    "icon.structure",
+    "type.lineHeight"
+  ]
+}

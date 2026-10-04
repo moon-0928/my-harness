@@ -1,0 +1,11 @@
+{
+  "script": "check-g1.js",
+  "pass": false,
+  "rules": [
+    "g1.minRefs",
+    "g1.minApps",
+    "g1.url",
+    "g1.point",
+    "g1.missingScreen"
+  ]
+}

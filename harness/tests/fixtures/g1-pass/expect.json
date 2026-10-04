@@ -1,0 +1,5 @@
+{
+  "script": "check-g1.js",
+  "pass": true,
+  "rules": []
+}

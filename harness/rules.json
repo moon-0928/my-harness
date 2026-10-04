@@ -1,0 +1,91 @@
+{
+  "source": ["docs/design.md", "docs/story-service.md#A,B", "docs/prd.md#8,9,16"],
+  "screens": ["홈", "무료 학습자료", "유료 멤버 자료실", "스킬 라이브러리", "미션 상세", "제출 화면", "내 학습", "내 자산", "자산 상세", "운영자 검수 화면"],
+  "gates": {
+    "input": { "minScreens": 2, "maxScreens": 3 },
+    "g1": {
+      "columns": ["#", "앱", "화면 유형", "uibowl URL", "반영 포인트"],
+      "minRefsPerScreen": 5,
+      "minDistinctApps": 3,
+      "urlMustContain": "uibowl.io"
+    },
+    "g2": {
+      "sections": ["목적", "유저스토리", "컴포넌트", "상태", "데이터 필드"],
+      "storyIds": [1, 2, 3, 4, 5],
+      "componentColumns": ["레이어 이름", "역할", "기본값"]
+    },
+    "g3": { "minFrames": 2, "maxFrames": 3, "conceptFields": ["결정자", "결정 내용"] }
+  },
+  "frame": { "width": 390, "height": 844, "sidePadding": 16 },
+  "colors": {
+    "allowed": ["#141414", "#ffffff", "#0066ff", "#f3f3f3", "#f0f0f0", "#e0e0e0", "#262626", "#707070", "#adadad", "rgba(115,115,115,0.56)"],
+    "checkPaints": ["SOLID"],
+    "skipPaints": ["IMAGE"],
+    "forbiddenPaints": ["GRADIENT_LINEAR", "GRADIENT_RADIAL", "GRADIENT_ANGULAR", "GRADIENT_DIAMOND"],
+    "contentLayer": {
+      "prefix": "content/",
+      "skipColorCheck": true,
+      "rootMustContain": ["IMAGE fill", "VECTOR", "BOOLEAN_OPERATION"],
+      "forbiddenInSubtree": {
+        "nodeTypes": ["TEXT"],
+        "layerNames": ["button-*", "badge-*", "visibility-select", "asset-card", "asset-detail", "review-status", "sale-badge", "price-cta"]
+      },
+      "violation": ["루트에 IMAGE 채우기·VECTOR·BOOLEAN_OPERATION이 하나도 없음", "하위에 TEXT 노드 있음", "하위에 UI 약속 레이어 있음"]
+    },
+    "accent": {
+      "hex": "#0066ff",
+      "maxPerScreen": 2,
+      "forbiddenOnLayers": ["button-*"],
+      "allowedOnLayers": ["badge-popular"]
+    }
+  },
+  "shadow": { "max": 0, "exceptions": ["segmented-control-active"] },
+  "radius": { "allowed": [0, 16, 24, 9999], "pillWhenAtLeastHalfShortSide": true, "iconSquircle": { "layer": "app-icon-squircle", "ratio": 0.3, "tolerancePx": 1 } },
+  "typography": {
+    "familyPrefix": "Noto Sans KR",
+    "weights": [300, 400, 500, 700],
+    "sizes": [32, 28, 24, 20, 18, 17, 15, 13, 12],
+    "lineHeights": [1.3, 1.35, 1.4, 1.5],
+    "letterSpacing": 0,
+    "textCaseForbidden": ["UPPER"]
+  },
+  "spacing": { "allowed": [0, 4, 8, 12, 16, 24, 32, 48, 64] },
+  "input": { "layer": "text-input", "restStrokeWidth": 0, "focusRing": { "width": 2, "color": "#141414" }, "focusRingScope": "component-only" },
+  "icon": { "layerPrefix": "icon-", "appliesTo": ["VECTOR", "BOOLEAN_OPERATION"] },
+  "button": { "layerPrefix": "button-", "height": 48, "radius": 9999, "minTouch": 44 },
+  "mustNot": {
+    "A_defaultPrivate": {
+      "screens": ["내 자산", "자산 상세"],
+      "requiredLayer": "visibility-select",
+      "valueLayer": "selected-value",
+      "requiredValue": "비공개",
+      "violation": ["레이어 없음", "선택된 옵션 텍스트 ≠ '비공개'"]
+    },
+    "B_noSaleBeforeReview": {
+      "screens": ["내 자산", "자산 상세", "운영자 검수 화면"],
+      "container": ["asset-card", "asset-detail"],
+      "requiredLayer": "review-status",
+      "approvedText": "승인됨",
+      "saleLayers": ["sale-badge", "price-cta"],
+      "violation": ["review-status 없이 sale-badge 또는 price-cta 있음 (review-status는 판매 신청 자산에만 표시, 2026-10-01)", "review-status ≠ '승인됨'인데 sale-badge 또는 price-cta 있음"]
+    },
+    "missingContainer": "위 screens에 container가 1개도 없으면 위반"
+  },
+  "dataModel": {
+    "User": ["id", "name", "email", "role", "membership_status", "cohort_id", "joined_at"],
+    "Content": ["id", "title", "summary", "body", "category", "tags", "access_level", "cohort_id", "source", "created_by", "published_at", "updated_at"],
+    "SkillCard": ["id", "title", "category", "difficulty", "tools", "recommended_for", "use_case", "requirements", "prompt_text", "attached_files", "steps", "example_output", "cautions", "access_level", "cohort_id", "created_by", "verified_by", "updated_at"],
+    "Mission": ["id", "title", "description", "month", "required_outputs", "due_date", "access_level", "cohort_id", "status"],
+    "Submission": ["id", "mission_id", "user_id", "title", "description", "files", "status", "submitted_at", "updated_at"],
+    "Asset": ["id", "owner_id", "title", "description", "category", "tags", "files", "preview", "usage_guide",
+      "review_comment", "example_output", "requirements", "visibility", "review_status", "price", "commission_rate", "created_at", "updated_at"],
+    "enumsMVP": {
+      "Asset.visibility": ["private", "member_only", "sale_requested"],
+      "Asset.review_status": ["draft", "pending", "revision_requested", "approved", "rejected"],
+      "Submission.status": ["draft", "submitted"],
+      "Mission.status": ["scheduled", "open", "closed"]
+    },
+    "excludedMVP": ["Purchase", "Payout", "Asset.visibility=for_sale", "Asset.review_status=suspended"]
+  },
+  "provisional": []
+}

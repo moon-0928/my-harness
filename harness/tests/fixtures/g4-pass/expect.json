@@ -1,0 +1,5 @@
+{
+  "script": "check-tokens.js",
+  "pass": true,
+  "rules": []
+}

@@ -1,0 +1,487 @@
+{
+  "frames": [
+    {
+      "screen": "내 자산",
+      "name": "내 자산",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#ffffff"
+        }
+      ],
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 24,
+      "children": [
+        {
+          "name": "title",
+          "type": "TEXT",
+          "characters": "내 자산",
+          "fontFamily": "Noto Sans KR",
+          "fontSize": 28,
+          "fontWeight": 700,
+          "lineHeight": 1.3,
+          "letterSpacing": 0,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#141414"
+            }
+          ]
+        },
+        {
+          "name": "segmented-control",
+          "type": "FRAME",
+          "width": 358,
+          "height": 40,
+          "cornerRadius": 9999,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#f3f3f3"
+            }
+          ],
+          "children": [
+            {
+              "name": "segmented-control-active",
+              "type": "FRAME",
+              "width": 170,
+              "height": 32,
+              "cornerRadius": 9999,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#ffffff"
+                }
+              ],
+              "children": [],
+              "effects": [
+                {
+                  "type": "DROP_SHADOW"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "visibility-select",
+          "type": "FRAME",
+          "width": 358,
+          "height": 48,
+          "cornerRadius": 16,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#f0f0f0"
+            }
+          ],
+          "children": [
+            {
+              "name": "selected-value",
+              "type": "TEXT",
+              "characters": "비공개",
+              "fontFamily": "Noto Sans KR",
+              "fontSize": 15,
+              "fontWeight": 400,
+              "lineHeight": 1.5,
+              "letterSpacing": 0,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#141414"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "text-input",
+          "type": "FRAME",
+          "width": 358,
+          "height": 48,
+          "cornerRadius": 16,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#f0f0f0"
+            }
+          ],
+          "children": [
+            {
+              "name": "placeholder",
+              "type": "TEXT",
+              "characters": "자산 이름",
+              "fontFamily": "Noto Sans KR",
+              "fontSize": 15,
+              "fontWeight": 400,
+              "lineHeight": 1.5,
+              "letterSpacing": 0,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#adadad"
+                }
+              ]
+            }
+          ],
+          "strokes": [],
+          "paddingTop": 12,
+          "paddingRight": 16,
+          "paddingBottom": 12,
+          "paddingLeft": 16
+        },
+        {
+          "name": "badge-popular",
+          "type": "FRAME",
+          "width": 60,
+          "height": 24,
+          "cornerRadius": 9999,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#0066ff"
+            }
+          ],
+          "children": [
+            {
+              "name": "label",
+              "type": "TEXT",
+              "characters": "인기",
+              "fontFamily": "Noto Sans KR",
+              "fontSize": 12,
+              "fontWeight": 500,
+              "lineHeight": 1.4,
+              "letterSpacing": 0,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#ffffff"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "app-icon-squircle",
+          "type": "FRAME",
+          "width": 48,
+          "height": 48,
+          "cornerRadius": 14.4,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#f3f3f3"
+            }
+          ],
+          "children": [
+            {
+              "name": "content/icon",
+              "type": "VECTOR",
+              "width": 24,
+              "height": 24,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#ff5a5f"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "button-primary",
+          "type": "FRAME",
+          "width": 358,
+          "height": 48,
+          "cornerRadius": 9999,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#141414"
+            }
+          ],
+          "children": [
+            {
+              "name": "label",
+              "type": "TEXT",
+              "characters": "새 자산 등록",
+              "fontFamily": "Noto Sans KR",
+              "fontSize": 15,
+              "fontWeight": 500,
+              "lineHeight": 1.5,
+              "letterSpacing": 0,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#ffffff"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "asset-card",
+          "type": "FRAME",
+          "width": 358,
+          "height": 200,
+          "cornerRadius": 24,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#ffffff"
+            }
+          ],
+          "children": [
+            {
+              "name": "content/preview",
+              "type": "RECTANGLE",
+              "width": 310,
+              "height": 120,
+              "cornerRadius": 16,
+              "fills": [
+                {
+                  "type": "IMAGE"
+                }
+              ]
+            },
+            {
+              "name": "review-status",
+              "type": "FRAME",
+              "width": 60,
+              "height": 24,
+              "cornerRadius": 9999,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#f3f3f3"
+                }
+              ],
+              "children": [
+                {
+                  "name": "label",
+                  "type": "TEXT",
+                  "characters": "검수 대기",
+                  "fontFamily": "Noto Sans KR",
+                  "fontSize": 12,
+                  "fontWeight": 500,
+                  "lineHeight": 1.4,
+                  "letterSpacing": 0,
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "color": "#141414"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "price-cta",
+              "type": "FRAME",
+              "width": 120,
+              "height": 48,
+              "cornerRadius": 9999,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#141414"
+                }
+              ],
+              "children": [
+                {
+                  "name": "label",
+                  "type": "TEXT",
+                  "characters": "19,000원",
+                  "fontFamily": "Noto Sans KR",
+                  "fontSize": 15,
+                  "fontWeight": 500,
+                  "lineHeight": 1.5,
+                  "letterSpacing": 0,
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "color": "#ffffff"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": "#f0f0f0"
+            }
+          ],
+          "strokeWeight": 1,
+          "paddingTop": 24,
+          "paddingRight": 24,
+          "paddingBottom": 24,
+          "paddingLeft": 24,
+          "itemSpacing": 12
+        },
+        {
+          "name": "asset-card",
+          "type": "FRAME",
+          "width": 358,
+          "height": 200,
+          "cornerRadius": 24,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#ffffff"
+            }
+          ],
+          "children": [
+            {
+              "name": "content/preview",
+              "type": "RECTANGLE",
+              "width": 310,
+              "height": 120,
+              "cornerRadius": 16,
+              "fills": [
+                {
+                  "type": "IMAGE"
+                }
+              ]
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": "#f0f0f0"
+            }
+          ],
+          "strokeWeight": 1,
+          "paddingTop": 24,
+          "paddingRight": 24,
+          "paddingBottom": 24,
+          "paddingLeft": 24,
+          "itemSpacing": 12
+        }
+      ]
+    },
+    {
+      "screen": "자산 상세",
+      "name": "자산 상세",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#ffffff"
+        }
+      ],
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 24,
+      "children": [
+        {
+          "name": "title",
+          "type": "TEXT",
+          "characters": "자산 상세",
+          "fontFamily": "Noto Sans KR",
+          "fontSize": 28,
+          "fontWeight": 700,
+          "lineHeight": 1.3,
+          "letterSpacing": 0,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#141414"
+            }
+          ]
+        },
+        {
+          "name": "lead",
+          "type": "TEXT",
+          "characters": "판매 신청 전 확인해 주세요",
+          "fontFamily": "Noto Sans KR",
+          "fontSize": 17,
+          "fontWeight": 300,
+          "lineHeight": 1.5,
+          "letterSpacing": 0,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#707070"
+            }
+          ]
+        },
+        {
+          "name": "visibility-select",
+          "type": "FRAME",
+          "width": 358,
+          "height": 48,
+          "cornerRadius": 16,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#f0f0f0"
+            }
+          ],
+          "children": [
+            {
+              "name": "selected-value",
+              "type": "TEXT",
+              "characters": "비공개",
+              "fontFamily": "Noto Sans KR",
+              "fontSize": 15,
+              "fontWeight": 400,
+              "lineHeight": 1.5,
+              "letterSpacing": 0,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#141414"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "button-outline",
+          "type": "FRAME",
+          "width": 358,
+          "height": 48,
+          "cornerRadius": 9999,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#ffffff"
+            }
+          ],
+          "children": [
+            {
+              "name": "label",
+              "type": "TEXT",
+              "characters": "수정",
+              "fontFamily": "Noto Sans KR",
+              "fontSize": 15,
+              "fontWeight": 500,
+              "lineHeight": 1.5,
+              "letterSpacing": 0,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#141414"
+                }
+              ]
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": "#e0e0e0"
+            }
+          ],
+          "strokeWeight": 1
+        }
+      ]
+    }
+  ]
+}

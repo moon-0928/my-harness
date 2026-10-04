@@ -1,0 +1,12 @@
+{
+  "script": "check-tokens.js",
+  "pass": false,
+  "rules": [
+    "color",
+    "radius",
+    "spacing",
+    "type.weight",
+    "type.letterSpacing",
+    "shadow"
+  ]
+}

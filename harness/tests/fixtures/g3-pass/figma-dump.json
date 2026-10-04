@@ -1,0 +1,38 @@
+{
+  "frames": [
+    {
+      "screen": "내 자산",
+      "name": "내 자산",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#ffffff"
+        }
+      ],
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 24,
+      "children": []
+    },
+    {
+      "screen": "자산 상세",
+      "name": "자산 상세",
+      "type": "FRAME",
+      "width": 390,
+      "height": 844,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#ffffff"
+        }
+      ],
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 24,
+      "children": []
+    }
+  ]
+}

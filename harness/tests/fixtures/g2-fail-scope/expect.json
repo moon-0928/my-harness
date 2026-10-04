@@ -1,0 +1,11 @@
+{
+  "script": "check-g2.js",
+  "pass": false,
+  "rules": [
+    "g2.story",
+    "g2.excludedMVP",
+    "g2.enum",
+    "g2.unknownField",
+    "g2.missingSection"
+  ]
+}

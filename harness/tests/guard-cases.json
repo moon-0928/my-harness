@@ -1,0 +1,165 @@
+[
+  {
+    "name": "researcher → 자기 폴더",
+    "agent": "researcher",
+    "tool": "Write",
+    "file": "runs/2026-09-29-01/s1/s1-references.md",
+    "expect": "allow"
+  },
+  {
+    "name": "researcher → s2 폴더",
+    "agent": "researcher",
+    "tool": "Write",
+    "file": "runs/2026-09-29-01/s2/s2-screen-spec.md",
+    "expect": "deny"
+  },
+  {
+    "name": "planner → 자기 폴더",
+    "agent": "planner",
+    "tool": "Edit",
+    "file": "runs/2026-09-29-01/s2/s2-screen-spec.md",
+    "expect": "allow"
+  },
+  {
+    "name": "planner → rules.json",
+    "agent": "planner",
+    "tool": "Edit",
+    "file": "harness/rules.json",
+    "expect": "deny"
+  },
+  {
+    "name": "designer → 자기 폴더",
+    "agent": "designer",
+    "tool": "Write",
+    "file": "runs/2026-09-29-01/design/s4-tokens.json",
+    "expect": "allow"
+  },
+  {
+    "name": "designer → gates.json",
+    "agent": "designer",
+    "tool": "Write",
+    "file": "runs/2026-09-29-01/gates.json",
+    "expect": "deny"
+  },
+  {
+    "name": "designer → 프로젝트 밖",
+    "agent": "designer",
+    "tool": "Write",
+    "file": "../outside/design/x.json",
+    "expect": "deny"
+  },
+  {
+    "name": "designer → Bash",
+    "agent": "designer",
+    "tool": "Bash",
+    "command": "echo hi",
+    "expect": "deny"
+  },
+  {
+    "name": "judge → Write",
+    "agent": "judge",
+    "tool": "Write",
+    "file": "runs/2026-09-29-01/checks/g1.json",
+    "expect": "deny"
+  },
+  {
+    "name": "judge → 덤프 파일",
+    "agent": "judge",
+    "tool": "Write",
+    "file": "runs/2026-09-29-01/checks/dump-g5.json",
+    "expect": "allow"
+  },
+  {
+    "name": "judge → checks 밖 덤프",
+    "agent": "judge",
+    "tool": "Write",
+    "file": "runs/2026-09-29-01/design/dump-g5.json",
+    "expect": "deny"
+  },
+  {
+    "name": "judge → 판정 결과 위장",
+    "agent": "judge",
+    "tool": "Write",
+    "file": "runs/2026-09-29-01/checks/dump-g5.json/../g5.json",
+    "expect": "deny"
+  },
+  {
+    "name": "judge → --dump 판정",
+    "agent": "judge",
+    "tool": "Bash",
+    "command": "node harness/scripts/check-figma.js runs/2026-09-29-01 --gate g5 --dump runs/2026-09-29-01/checks/dump-g5.json",
+    "expect": "allow"
+  },
+  {
+    "name": "judge → 판정 스크립트",
+    "agent": "judge",
+    "tool": "Bash",
+    "command": "node harness/scripts/check-g1.js runs/2026-09-29-01",
+    "expect": "allow"
+  },
+  {
+    "name": "judge → heredoc 덤프",
+    "agent": "judge",
+    "tool": "Bash",
+    "command": "node harness/scripts/check-figma.js runs/2026-09-29-01 --gate g5 <<'EOF'\n{\"frames\":[]}\nEOF",
+    "expect": "allow"
+  },
+  {
+    "name": "judge → 명령 연결",
+    "agent": "judge",
+    "tool": "Bash",
+    "command": "node harness/scripts/check-g1.js runs/x && rm -rf runs",
+    "expect": "deny"
+  },
+  {
+    "name": "judge → 리다이렉트",
+    "agent": "judge",
+    "tool": "Bash",
+    "command": "node harness/scripts/check-g1.js runs/x > harness/rules.json",
+    "expect": "deny"
+  },
+  {
+    "name": "judge → 다른 스크립트",
+    "agent": "judge",
+    "tool": "Bash",
+    "command": "node harness/scripts/guard-paths.js",
+    "expect": "deny"
+  },
+  {
+    "name": "judge → heredoc 뒤 명령",
+    "agent": "judge",
+    "tool": "Bash",
+    "command": "node harness/scripts/check-figma.js runs/x --gate g5 <<'EOF'\n{}\nEOF\nrm -rf runs",
+    "expect": "deny"
+  },
+  {
+    "name": "researcher → cwd가 실행 폴더여도 자기 폴더 허용",
+    "agent": "researcher",
+    "tool": "Write",
+    "file": "runs/2026-10-01-01/s1/s1-references.md",
+    "cwd": "runs/2026-10-01-01",
+    "expect": "allow"
+  },
+  {
+    "name": "researcher → cwd가 harness여도 가짜 runs 경로 차단",
+    "agent": "researcher",
+    "tool": "Write",
+    "file": "harness/runs/2026-10-01-01/s1/x.md",
+    "cwd": "harness",
+    "expect": "deny"
+  },
+  {
+    "name": "designer → cwd가 design/이어도 s1 쓰기 차단",
+    "agent": "designer",
+    "tool": "Write",
+    "file": "runs/2026-10-01-01/s1/x.md",
+    "cwd": "runs/2026-10-01-01/design",
+    "expect": "deny"
+  },
+  {
+    "name": "메인 세션 → 아무 곳",
+    "tool": "Write",
+    "file": "CLAUDE.md",
+    "expect": "allow"
+  }
+]

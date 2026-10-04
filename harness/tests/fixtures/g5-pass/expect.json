@@ -1,0 +1,11 @@
+{
+  "script": "check-figma.js",
+  "args": [
+    "--gate",
+    "g5",
+    "--dump",
+    "{dir}/figma-dump.json"
+  ],
+  "pass": true,
+  "rules": []
+}

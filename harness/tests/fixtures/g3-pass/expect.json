@@ -1,0 +1,9 @@
+{
+  "script": "check-g3.js",
+  "args": [
+    "--dump",
+    "{dir}/figma-dump.json"
+  ],
+  "pass": true,
+  "rules": []
+}

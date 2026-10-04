@@ -1,0 +1,7 @@
+{
+  "script": "check-g2.js",
+  "pass": false,
+  "rules": [
+    "mustNot.A"
+  ]
+}

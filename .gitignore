@@ -1,0 +1,6 @@
+# 공개하지 않는 파일
+docs/prd.md
+runs/
+
+# 로컬 설정
+.claude/settings.local.json
